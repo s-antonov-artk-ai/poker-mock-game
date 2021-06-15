@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "no-console": false,
+    "cyclomatic-complexity": [true, 7],
+    "object-literal-sort-keys": false,
+    "variable-name": [true, "ban-keywords", "allow-snake-case" ],
+    "no-redundant-jsdoc": true,
+    "no-var-keyword": true,
+    "no-var-requires": true,
+    "no-unnecessary-initializer": true,
+    "no-return-await": true,
+    "no-magic-numbers": true,
+    "prefer-readonly": true,
+    "no-bitwise": false,
+    "no-reference-import": true,
+    "ordered-imports": false,
+    "jsx-no-lambda": true,
+    "quotemark": [true, "single"],
+    "curly": true,
+    "whitespace": [true, "check-branch", "check-operator", "check-module"],
+    "max-line-length": {
+      "options": [120]
+    }
+  },
+  "jsRules": {
+    "no-console": false
+  },
+  "linterOptions": {
+    "exclude": [
+      "src/modules/types/window.d.ts",
+      "src/modules/types/libs.d.ts",
+      "src/serviceWorker.ts",
+      "src/setupProxy.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js",
+      "src/registerServiceWorker.ts",
+      "configs/**/*",
+      "scripts/**/*"
+    ]
+  }
+}

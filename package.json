@@ -1,0 +1,64 @@
+{
+  "name": "pocker_mock",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "lodash": "4.17.20",
+    "moment": "2.29.1",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-redux": "7.2.2",
+    "react-scripts": "3.4.4",
+    "source-map-explorer": "^2.1.1",
+    "styled-components": "5.2.1"
+  },
+  "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "start": "react-scripts start",
+    "build:production": "react-scripts build",
+    "build:development": "sh -ac '. ./.env.development; react-scripts build'",
+    "test": "react-scripts test --env=jsdom",
+    "lint": "tslint --project . '**/*.{ts,tsx}'",
+    "lint:fix": "tslint --project . '**/*.{ts,tsx}' --fix",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.167",
+    "@types/react": "^16.14.2",
+    "@types/react-dom": "^16.9.10",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.7",
+    "dtslint": "^4.0.6",
+    "tslint": "5.20.1",
+    "tslint-config-prettier": "1.18.0",
+    "tslint-react": "4.2.0",
+    "typescript": "3.9.7"
+  },
+  "lint-staged": {
+    "*.+(ts|tsx)": [
+      "yarn lint:fix",
+      "git add",
+      "yarn typecheck && CI=true"
+    ],
+    "*.+(json|css|md)": [
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
